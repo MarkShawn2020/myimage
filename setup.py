@@ -19,12 +19,16 @@ setuptools.setup(
                 "especially good for those writing markdown journals.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    # url="https://github.com/pypa/sampleproject",
+    url="https://github.com/MarkShawn2020/myimage",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    python_requires='>=3.6',
+    python_requires='>=3.5',
+    install_requires=[
+        "requests",
+        "qiniu",
+    ]
 )
