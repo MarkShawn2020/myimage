@@ -16,10 +16,10 @@ img_path_online = myimage.upload_img(img_path)
 ```
 
 #### 使用七牛云
-需要配置您的键，支持两种方式。
+需要配置您键信息，支持两种方式，具体可以参考官方说明：https://portal.qiniu.com/kodo/bucket
 
 ##### 1. （推荐）配置settings文件启动
-打开settings文件后，填写一下键信息：
+在`myimage/myimage`下新建`settings.py`文件，填写一下键信息：
 ```python
 DOMAIN = xxx
 BUCKET = xxx
@@ -45,6 +45,8 @@ img_path = r'xxx'
 img_path_online = q.upload_img(img_path)
 ```
 
-```
+### TODO
+- [ ] 支持腾讯云、阿里云、Github等其他图床平台
+- [ ] 其他一些功能欢迎issue！
 
 

@@ -34,15 +34,6 @@ class Qiniuyun:
 		self.q = qiniu.Auth(self.__ak, self.__sk)
 
 	def init_from_params(self, domain, bucket, ak, sk):
-		"""
-		七牛云图床配置的几个参数
-		具体可以查看https://portal.qiniu.com/kodo/bucket
-
-		:param domain:
-		:param bucket:
-		:param ak:
-		:param sk:
-		"""
 		self._domain = domain
 		self._bucket = bucket
 		self.__ak    = ak
