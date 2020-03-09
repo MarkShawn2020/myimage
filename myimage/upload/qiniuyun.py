@@ -37,12 +37,12 @@ class Qiniuyun:
 		:return: 目标图像的外链
 		"""
 		key = os.path.basename(img_path)
-		online_img_path =  "{}/{}".format(self._domain, key)
-		if check_exist and check_target_exist(online_img_path):
-			logging.info("Using cached: {}".format(online_img_path))
+		img_path_online =  "{}/{}".format(self._domain, key)
+		if check_exist and check_target_exist(img_path_online):
+			logging.info("Using cached: {}".format(img_path_online))
 		else:
 			token = self.q.upload_token(self._bucket, key, 3600)
 			ret, info = qiniu.put_file(token , key, img_path)
 			assert ret["key"] == key
-			logging.info("Uploaded: {}".format(online_img_path))
-		return online_img_path
+			logging.info("Uploaded: {}".format(img_path_online))
+		return img_path_online
