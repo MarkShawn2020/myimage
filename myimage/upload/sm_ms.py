@@ -18,7 +18,7 @@ class SMMS:
 		result = requests.post(self._upload_api, files={"smfile": open(img_path, "rb")}).json()
 		if result["code"] == "success":
 			logging.info("Uploaded {}".format(result["data"]["url"]))
-			return result["url"]
+			return result['data']["url"]
 
 		elif result["code"] == "image_repeated":
 			logging.info("Repeated {}".format(result["images"]))
@@ -29,4 +29,4 @@ class SMMS:
 
 
 if __name__ == '__main__':
-	SMMS().upload_img(r'C:\Users\mark\Pictures\Screenshots\屏幕截图(683).png')
+	SMMS().upload_img(r'C:\Users\mark\Documents\微信截图_20190806164931.png')
