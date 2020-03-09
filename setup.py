@@ -12,7 +12,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="myimage", # Replace with your own username
-    version="0.0.3",
+    version="0.0.4",
     author="MarkShawn",
     author_email="shawninjuly@gmail.com",
     description="A handful module for uploading local image and then get the path from specific server, "
