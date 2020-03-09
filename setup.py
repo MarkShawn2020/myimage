@@ -12,7 +12,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="myimage", # Replace with your own username
-    version="0.0.2",
+    version="0.0.3",
     author="MarkShawn",
     author_email="shawninjuly@gmail.com",
     description="A handful module for uploading local image and then get the path from specific server, "
@@ -20,7 +20,8 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/MarkShawn2020/myimage",
-    packages=setuptools.find_packages(),
+    packages=setuptools.find_packages(
+        exclude=['*.settings', ]),
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
@@ -30,5 +31,5 @@ setuptools.setup(
     install_requires=[
         "requests",
         "qiniu",
-    ]
+    ],
 )
