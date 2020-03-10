@@ -24,13 +24,16 @@ class Qiniuyun:
 		except NotImplementedError:
 			logging.warning("建议通过settings文件配置七牛云，否则必须通过`self.init_from_params`初始化！")
 
-
 	def init_from_settings(self):
 		for key in self._must_keys:
 			if not hasattr(st, key):
 				raise NotImplementedError("从`upload/settings.py`文件初始化七牛云，必须要有以下键：{}".format(self._must_keys))
 			else:
 				setattr(self, key, getattr(st, key))
+		self._domain = getattr(st, "QINIU_DOMAIN")
+		self._bucket = getattr(st, "QINIU_BUCKET")
+		self.__ak    = getattr(st, "QINIU_AK")
+		self.__sk    = getattr(st, "QINIU_SK")
 		self.q = qiniu.Auth(self.__ak, self.__sk)
 
 	def init_from_params(self, domain, bucket, ak, sk):
