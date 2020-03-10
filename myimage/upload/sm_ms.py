@@ -25,7 +25,7 @@ class SMMS:
 			return result["images"]
 
 		else:
-			raise result
+			raise Exception(result)
 
 
 if __name__ == '__main__':
